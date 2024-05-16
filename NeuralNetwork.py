@@ -63,7 +63,7 @@ print("Best Parameters:", grid_search.best_params_)
 print("Best Score:", grid_search.best_score_)
 
 best_clf = grid_search.best_estimator_'''
-clf = MLPClassifier(max_iter=500, solver='adam', random_state=1,alpha=0.0001,hidden_layer_sizes=(100,))
+clf = MLPClassifier(max_iter=500, activation="tanh",solver='adam', random_state=1,alpha=0.0001,hidden_layer_sizes=(100,))
 clf.fit(X_train_scaled, y_train_encoded)
 y_pred_encoded = clf.predict(X_test_scaled)
 
